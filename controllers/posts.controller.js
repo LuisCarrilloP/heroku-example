@@ -36,18 +36,18 @@ const createPost = catchAsync(async (req, res, next) => {
 	const { title, content } = req.body;
 	const { sessionUser } = req;
 
-	const newPost = await Post.create({
+	/* const newPost = await Post.create({
 		title,
 		content,
 		userId: sessionUser.id,
 	});
 
 	//Send mail when post has been created
-	await new Email(sessionUser.email).sendNewPost(title, content)
+	await new Email(sessionUser.email).sendNewPost(title, content) */
 
 	res.status(201).json({
 		status: 'success',
-		newPost,
+		/* newPost, */
 	});
 });
 
